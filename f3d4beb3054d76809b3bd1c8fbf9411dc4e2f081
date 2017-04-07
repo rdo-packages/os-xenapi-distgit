@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_0f340fdd",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-04-07T15:23:26Z",
+      "side": 1,
+      "message": "For BuildRequires? I thought we never did that",
+      "parentUuid": "fa98f980_8f20ff9c",
+      "revId": "f3d4beb3054d76809b3bd1c8fbf9411dc4e2f081",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_af25c3ac",
         "filename": "python-os-xenapi.spec",
         "patchSetId": 3
