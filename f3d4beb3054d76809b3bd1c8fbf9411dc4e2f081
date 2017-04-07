@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_8f20ff9c",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-04-07T15:20:42Z",
+      "side": 1,
+      "message": "pbr BR should be versioned",
+      "revId": "f3d4beb3054d76809b3bd1c8fbf9411dc4e2f081",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_af25c3ac",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-04-07T15:20:42Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "f3d4beb3054d76809b3bd1c8fbf9411dc4e2f081",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_cf3927da",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 87
+      },
+      "writtenOn": "2017-04-07T15:20:42Z",
+      "side": 1,
+      "message": "-tests require main package which has license, so not required here.",
+      "revId": "f3d4beb3054d76809b3bd1c8fbf9411dc4e2f081",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
