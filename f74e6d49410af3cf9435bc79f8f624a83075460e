@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_6fbf5bd1",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-04-10T11:29:41Z",
+      "side": 1,
+      "message": "Upstream fix was merged https://review.openstack.org/454677",
+      "revId": "f74e6d49410af3cf9435bc79f8f624a83075460e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
