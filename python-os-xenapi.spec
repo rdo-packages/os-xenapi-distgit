@@ -39,6 +39,8 @@ BuildRequires:  python-os-testr
 BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
 BuildRequires:  python-testtools
+# for unittests
+BuildRequires:   python-eventlet >= 0.18.2
 
 Requires:   python-eventlet >= 0.18.2
 Requires:   python-oslo-concurrency >= 3.8.0
