@@ -48,6 +48,7 @@ Requires:   python-oslo-utils >= 3.20.0
 Requires:   python-oslo-i18n >= 2.1.0
 Requires:   python-six >= 1.9.0
 Requires:   python-pbr >= 2.0.0
+Requires:   python-babel
 
 %description -n python2-%{library}
 XenAPI client library for OpenStack projects.
@@ -104,6 +105,8 @@ Requires:   python3-oslo-log >= 3.22.0
 Requires:   python3-oslo-utils >= 3.20.0
 Requires:   python3-oslo-i18n >= 2.1.0
 Requires:   python3-six >= 1.9.0
+Requires:   python3-pbr >= 2.0.0
+Requires:   python3-babel
 
 %description -n python3-%{library}
 XenAPI library for OpenStack projects.
