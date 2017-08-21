@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_1a6a8e1a",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-21T09:56:45Z",
+      "side": 1,
+      "message": "Althoug babel is in requirements.txt it\u0027s not actually imported in the package. Translation is done with oslo-i18n. Anyway, i18n depends on python-babel, so i will not block on this.",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 24
+      },
+      "revId": "2c2123e53db921ffcc255545962e12c64c5d97a2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
