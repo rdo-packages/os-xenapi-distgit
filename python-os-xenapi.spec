@@ -11,8 +11,8 @@
 %global module os_xenapi
 
 Name:       python-%{library}
-Version:    XXX
-Release:    XXX
+Version:    0.2.0
+Release:    1%{?dist}
 Summary:    XenAPI library for OpenStack projects
 License:    ASL 2.0
 URL:        http://launchpad.net/%{library}/
@@ -196,3 +196,6 @@ rm -rf .testrepository
 %endif # with_python3
 
 %changelog
+* Thu Aug 24 2017 Alfredo Moralejo <amoralej@redhat.com> 0.2.0-1
+- Update to 0.2.0
+
