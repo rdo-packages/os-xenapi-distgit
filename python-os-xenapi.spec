@@ -98,6 +98,7 @@ BuildRequires:  python3-testrepository
 BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
 BuildRequires:  python3-eventlet >= 0.18.2
+BuildRequires:  openstack-macros
 
 Requires:   python3-eventlet >= 0.18.2
 Requires:   python3-oslo-concurrency >= 3.8.0
@@ -137,7 +138,7 @@ XenAPI library for OpenStack projects.
 %autosetup -n %{library}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
-rm -f *requirements.txt
+%py_req_cleanup
 
 %build
 %py2_build
