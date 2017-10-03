@@ -10,6 +10,8 @@
 %global library os-xenapi
 %global module os_xenapi
 
+%global common_desc XenAPI library for OpenStack projects.
+
 Name:       python-%{library}
 Version:    XXX
 Release:    XXX
@@ -51,7 +53,7 @@ Requires:   python-pbr >= 2.0.0
 Requires:   python-babel
 
 %description -n python2-%{library}
-XenAPI client library for OpenStack projects.
+%{common_desc}
 
 %package -n python2-%{library}-tests
 Summary:    Tests for XenAPI library for OpenStack projects
@@ -63,7 +65,7 @@ Requires:   python-testscenarios
 Requires:   python-testtools
 
 %description -n python2-%{library}-tests
-XenAPI library for OpenStack projects.
+%{common_desc}
 
 This package contains the XenAPI library test files.
 
@@ -75,7 +77,7 @@ BuildRequires: python-sphinx
 BuildRequires: python-oslo-sphinx
 
 %description -n python-%{library}-doc
-XenAPI library for OpenStack projects.
+%{common_desc}
 
 This package contains the documentation.
 
@@ -109,7 +111,7 @@ Requires:   python3-pbr >= 2.0.0
 Requires:   python3-babel
 
 %description -n python3-%{library}
-XenAPI library for OpenStack projects.
+%{common_desc}
 
 
 %package -n python3-%{library}-tests
@@ -122,7 +124,7 @@ Requires:   python3-testscenarios
 Requires:   python3-testtools
 
 %description -n python3-%{library}-tests
-XenAPI library for OpenStack projects.
+%{common_desc}
 
 This package contains the XenAPI library test files.
 
@@ -130,7 +132,7 @@ This package contains the XenAPI library test files.
 
 
 %description
-XenAPI library for OpenStack projects.
+%{common_desc}
 
 
 %prep
