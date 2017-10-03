@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_9fc3e789",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-10-03T13:33:44Z",
+      "side": 1,
+      "message": "missed this one",
+      "range": {
+        "startLine": 56,
+        "startChar": 26,
+        "endLine": 56,
+        "endChar": 35
+      },
+      "revId": "0b39d626d7a601bdeff0fe28ee83f5f96c6c654c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
