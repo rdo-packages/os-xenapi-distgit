@@ -23,6 +23,8 @@ Source0:    http://tarballs.openstack.org/%{library}/%{library}-master.tar.gz
 
 BuildArch:  noarch
 
+BuildRequires:  git
+
 %package -n python2-%{library}
 Summary:    XenAPI client library for OpenStack projects
 %{?python_provide:%python_provide python2-%{library}}
@@ -30,8 +32,8 @@ Summary:    XenAPI client library for OpenStack projects
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr >= 2.0.0
 BuildRequires:  python-setuptools
-BuildRequires:  git
 BuildRequires:  python-babel
+BuildRequires:  python-paramiko
 # Required for tests
 BuildRequires:  python-oslo-concurrency
 BuildRequires:  python-oslo-i18n
@@ -51,6 +53,7 @@ Requires:   python-oslo-i18n >= 2.1.0
 Requires:   python-six >= 1.9.0
 Requires:   python-pbr >= 2.0.0
 Requires:   python-babel
+Requires:   python-paramiko
 
 %description -n python2-%{library}
 %{common_desc}
@@ -89,7 +92,7 @@ Summary:    XenAPI library for OpenStack projects
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr >= 2.0.0
 BuildRequires:  python3-setuptools
-BuildRequires:  git
+BuildRequires:  python3-paramiko
 # Required for tests
 BuildRequires:  python3-oslo-concurrency
 BuildRequires:  python3-oslo-i18n
@@ -110,6 +113,7 @@ Requires:   python3-oslo-i18n >= 2.1.0
 Requires:   python3-six >= 1.9.0
 Requires:   python3-pbr >= 2.0.0
 Requires:   python3-babel
+Requires:   python3-paramiko
 
 %description -n python3-%{library}
 %{common_desc}
