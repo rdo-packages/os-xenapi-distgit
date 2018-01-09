@@ -24,6 +24,7 @@ Source0:    http://tarballs.openstack.org/%{library}/%{library}-master.tar.gz
 BuildArch:  noarch
 
 BuildRequires:  git
+BuildRequires:  openstack-macros
 
 %package -n python2-%{library}
 Summary:    XenAPI client library for OpenStack projects
@@ -103,7 +104,6 @@ BuildRequires:  python3-testrepository
 BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
 BuildRequires:  python3-eventlet >= 0.18.2
-BuildRequires:  openstack-macros
 
 Requires:   python3-eventlet >= 0.18.2
 Requires:   python3-oslo-concurrency >= 3.8.0
