@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_3c1df1bd",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-01-11T13:51:16Z",
+      "side": 1,
+      "message": "won\u0027t it conflict with the file(%{_bindir}/xenapi_bootstrap) installed by py3_install.",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 12
+      },
+      "revId": "789986d0c308875caf351d3b4a3ad3f3742181f3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
