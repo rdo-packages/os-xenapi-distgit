@@ -158,15 +158,19 @@ This package contains the XenAPI library test files.
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %install
-%py2_install
-# Remove the dom0 bits, we're not supporting them
-rm -rf %{buildroot}%{python2_sitelib}/%{module}/dom0
 %if 0%{?with_python3}
 %py3_install
 # Remove the dom0 bits, we're not supporting them
 rm -rf %{buildroot}%{python3_sitelib}/%{module}/dom0
+cp %{buildroot}/%{_bindir}/xenapi_bootstrap %{buildroot}/%{_bindir}/xenapi_bootstrap-3
+ln -sf %{_bindir}/xenapi_bootstrap-3 %{buildroot}/%{_bindir}/xenapi_bootstrap-%{python3_version}
 %endif
 
+%py2_install
+# Remove the dom0 bits, we're not supporting them
+rm -rf %{buildroot}%{python2_sitelib}/%{module}/dom0
+cp %{buildroot}/%{_bindir}/xenapi_bootstrap %{buildroot}/%{_bindir}/xenapi_bootstrap-2
+ln -sf %{_bindir}/xenapi_bootstrap-2 %{buildroot}/%{_bindir}/xenapi_bootstrap-%{python2_version}
 
 
 %check
@@ -180,6 +184,9 @@ rm -rf .testrepository
 %license LICENSE
 %{python2_sitelib}/%{module}
 %{python2_sitelib}/%{module}-*.egg-info
+%{_bindir}/xenapi_bootstrap
+%{_bindir}/xenapi_bootstrap-2
+%{_bindir}/xenapi_bootstrap-%{python2_version}
 %exclude %{python2_sitelib}/%{module}/tests
 
 %files -n python2-%{library}-tests
@@ -195,6 +202,8 @@ rm -rf .testrepository
 %license LICENSE
 %{python3_sitelib}/%{module}
 %{python3_sitelib}/%{module}-*.egg-info
+%{_bindir}/xenapi_bootstrap-3
+%{_bindir}/xenapi_bootstrap-%{python3_version}
 %exclude %{python3_sitelib}/%{module}/tests
 
 %files -n python3-%{library}-tests
