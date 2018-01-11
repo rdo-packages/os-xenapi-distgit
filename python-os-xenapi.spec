@@ -203,3 +203,4 @@ rm -rf .testrepository
 %endif # with_python3
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/os-xenapi/commit/?id=f88521682e3c9a4a8c3cdff16bf845c1a672cbbe
