@@ -31,30 +31,30 @@ Summary:    XenAPI client library for OpenStack projects
 %{?python_provide:%python_provide python2-%{library}}
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr >= 2.0.0
-BuildRequires:  python-setuptools
-BuildRequires:  python-babel
-BuildRequires:  python-paramiko
+BuildRequires:  python2-pbr >= 2.0.0
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-babel
+BuildRequires:  python2-paramiko
 # Required for tests
-BuildRequires:  python-oslo-concurrency
-BuildRequires:  python-oslo-i18n
-BuildRequires:  python-oslo-log
-BuildRequires:  python-oslotest
-BuildRequires:  python-os-testr
-BuildRequires:  python-testrepository
-BuildRequires:  python-testscenarios
-BuildRequires:  python-testtools
-BuildRequires:  python-eventlet >= 0.18.2
+BuildRequires:  python2-oslo-concurrency
+BuildRequires:  python2-oslo-i18n
+BuildRequires:  python2-oslo-log
+BuildRequires:  python2-oslotest
+BuildRequires:  python2-os-testr
+BuildRequires:  python2-testrepository
+BuildRequires:  python2-testscenarios
+BuildRequires:  python2-testtools
+BuildRequires:  python2-eventlet >= 0.18.2
 
-Requires:   python-eventlet >= 0.18.2
-Requires:   python-oslo-concurrency >= 3.8.0
-Requires:   python-oslo-log >= 3.22.0
-Requires:   python-oslo-utils >= 3.20.0
-Requires:   python-oslo-i18n >= 2.1.0
-Requires:   python-six >= 1.9.0
-Requires:   python-pbr >= 2.0.0
-Requires:   python-babel
-Requires:   python-paramiko
+Requires:   python2-eventlet >= 0.18.2
+Requires:   python2-oslo-concurrency >= 3.20.0
+Requires:   python2-oslo-log >= 3.30.0
+Requires:   python2-oslo-utils >= 3.31.0
+Requires:   python2-oslo-i18n >= 3.15.3
+Requires:   python2-six >= 1.10.0
+Requires:   python2-pbr >= 2.0.0
+Requires:   python2-babel
+Requires:   python2-paramiko
 
 %description -n python2-%{library}
 %{common_desc}
@@ -62,11 +62,11 @@ Requires:   python-paramiko
 %package -n python2-%{library}-tests
 Summary:    Tests for XenAPI library for OpenStack projects
 Requires:   python2-%{library} = %{version}-%{release}
-Requires:   python-oslotest
-Requires:   python-os-testr
-Requires:   python-testrepository
-Requires:   python-testscenarios
-Requires:   python-testtools
+Requires:   python2-oslotest
+Requires:   python2-os-testr
+Requires:   python2-testrepository
+Requires:   python2-testscenarios
+Requires:   python2-testtools
 
 %description -n python2-%{library}-tests
 %{common_desc}
