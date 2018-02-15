@@ -13,13 +13,13 @@
 %global common_desc XenAPI library for OpenStack projects.
 
 Name:       python-%{library}
-Version:    XXX
-Release:    XXX
+Version:    0.3.1
+Release:    1%{?dist}
 Summary:    XenAPI library for OpenStack projects
 License:    ASL 2.0
 URL:        http://launchpad.net/%{library}/
 
-Source0:    http://tarballs.openstack.org/%{library}/%{library}-master.tar.gz
+Source0:    http://tarballs.openstack.org/%{library}/%{library}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 
@@ -203,3 +203,6 @@ rm -rf .testrepository
 %endif # with_python3
 
 %changelog
+* Thu Feb 15 2018 RDO <dev@lists.rdoproject.org> 0.3.1-1
+- Update to 0.3.1
+
