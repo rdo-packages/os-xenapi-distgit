@@ -47,11 +47,11 @@ BuildRequires:  python-testtools
 BuildRequires:  python-eventlet >= 0.18.2
 
 Requires:   python-eventlet >= 0.18.2
-Requires:   python-oslo-concurrency >= 3.8.0
-Requires:   python-oslo-log >= 3.22.0
-Requires:   python-oslo-utils >= 3.20.0
-Requires:   python-oslo-i18n >= 2.1.0
-Requires:   python-six >= 1.9.0
+Requires:   python-oslo-concurrency >= 3.26.0
+Requires:   python-oslo-log >= 3.36.0
+Requires:   python-oslo-utils >= 3.33.0
+Requires:   python-oslo-i18n >= 3.15.3
+Requires:   python-six >= 1.10.0
 Requires:   python-pbr >= 2.0.0
 Requires:   python-babel
 Requires:   python-paramiko
@@ -106,11 +106,11 @@ BuildRequires:  python3-testtools
 BuildRequires:  python3-eventlet >= 0.18.2
 
 Requires:   python3-eventlet >= 0.18.2
-Requires:   python3-oslo-concurrency >= 3.8.0
-Requires:   python3-oslo-log >= 3.22.0
-Requires:   python3-oslo-utils >= 3.20.0
-Requires:   python3-oslo-i18n >= 2.1.0
-Requires:   python3-six >= 1.9.0
+Requires:   python3-oslo-concurrency >= 3.26.0
+Requires:   python3-oslo-log >= 3.36.0
+Requires:   python3-oslo-utils >= 3.33.0
+Requires:   python3-oslo-i18n >= 3.15.3
+Requires:   python3-six >= 1.10.0
 Requires:   python3-pbr >= 2.0.0
 Requires:   python3-babel
 Requires:   python3-paramiko
