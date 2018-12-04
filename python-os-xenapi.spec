@@ -1,11 +1,15 @@
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-
-# Python3 support in OpenStack starts with version 3.5,
-# which is only in Fedora 24+
-%if 0%{?fedora} >= 24
-%global with_python3 1
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
 %endif
-
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global library os-xenapi
 %global module os_xenapi
@@ -26,49 +30,52 @@ BuildArch:  noarch
 BuildRequires:  git
 BuildRequires:  openstack-macros
 
-%package -n python2-%{library}
+%package -n python%{pyver}-%{library}
 Summary:    XenAPI client library for OpenStack projects
-%{?python_provide:%python_provide python2-%{library}}
+%{?python_provide:%python_provide python%{pyver}-%{library}}
+%if %{pyver} == 3
+Obsoletes: python2-%{library} < %{version}-%{release}
+%endif
 
-BuildRequires:  python2-devel
-BuildRequires:  python-pbr >= 2.0.0
-BuildRequires:  python-setuptools
-BuildRequires:  python-babel
-BuildRequires:  python-paramiko
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-pbr >= 2.0.0
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-babel
+BuildRequires:  python%{pyver}-paramiko
 # Required for tests
-BuildRequires:  python-oslo-concurrency
-BuildRequires:  python-oslo-i18n
-BuildRequires:  python-oslo-log
-BuildRequires:  python-oslotest
-BuildRequires:  python-os-testr
-BuildRequires:  python-testrepository
-BuildRequires:  python-testscenarios
-BuildRequires:  python-testtools
-BuildRequires:  python-eventlet >= 0.18.2
+BuildRequires:  python%{pyver}-oslo-concurrency
+BuildRequires:  python%{pyver}-oslo-i18n
+BuildRequires:  python%{pyver}-oslo-log
+BuildRequires:  python%{pyver}-oslotest
+BuildRequires:  python%{pyver}-os-testr
+BuildRequires:  python%{pyver}-testrepository
+BuildRequires:  python%{pyver}-testscenarios
+BuildRequires:  python%{pyver}-testtools
+BuildRequires:  python%{pyver}-eventlet >= 0.18.2
 
-Requires:   python-eventlet >= 0.18.2
-Requires:   python-oslo-concurrency >= 3.26.0
-Requires:   python-oslo-log >= 3.36.0
-Requires:   python-oslo-utils >= 3.33.0
-Requires:   python-oslo-i18n >= 3.15.3
-Requires:   python-six >= 1.10.0
-Requires:   python-pbr >= 2.0.0
-Requires:   python-babel
-Requires:   python-paramiko
+Requires:   python%{pyver}-eventlet >= 0.18.2
+Requires:   python%{pyver}-oslo-concurrency >= 3.26.0
+Requires:   python%{pyver}-oslo-log >= 3.36.0
+Requires:   python%{pyver}-oslo-utils >= 3.33.0
+Requires:   python%{pyver}-oslo-i18n >= 3.15.3
+Requires:   python%{pyver}-six >= 1.10.0
+Requires:   python%{pyver}-pbr >= 2.0.0
+Requires:   python%{pyver}-babel
+Requires:   python%{pyver}-paramiko
 
-%description -n python2-%{library}
+%description -n python%{pyver}-%{library}
 %{common_desc}
 
-%package -n python2-%{library}-tests
+%package -n python%{pyver}-%{library}-tests
 Summary:    Tests for XenAPI library for OpenStack projects
-Requires:   python2-%{library} = %{version}-%{release}
-Requires:   python-oslotest
-Requires:   python-os-testr
-Requires:   python-testrepository
-Requires:   python-testscenarios
-Requires:   python-testtools
+Requires:   python%{pyver}-%{library} = %{version}-%{release}
+Requires:   python%{pyver}-oslotest
+Requires:   python%{pyver}-os-testr
+Requires:   python%{pyver}-testrepository
+Requires:   python%{pyver}-testscenarios
+Requires:   python%{pyver}-testtools
 
-%description -n python2-%{library}-tests
+%description -n python%{pyver}-%{library}-tests
 %{common_desc}
 
 This package contains the XenAPI library test files.
@@ -77,64 +84,13 @@ This package contains the XenAPI library test files.
 %package -n python-%{library}-doc
 Summary:    Documentation for XenAPI library for OpenStack projects
 
-BuildRequires: python-sphinx
-BuildRequires: python-oslo-sphinx
+BuildRequires: python%{pyver}-sphinx
+BuildRequires: python%{pyver}-oslo-sphinx
 
 %description -n python-%{library}-doc
 %{common_desc}
 
 This package contains the documentation.
-
-%if 0%{?with_python3}
-%package -n python3-%{library}
-Summary:    XenAPI library for OpenStack projects
-%{?python_provide:%python_provide python3-%{library}}
-
-BuildRequires:  python3-devel
-BuildRequires:  python3-pbr >= 2.0.0
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-paramiko
-# Required for tests
-BuildRequires:  python3-oslo-concurrency
-BuildRequires:  python3-oslo-i18n
-BuildRequires:  python3-oslo-log
-BuildRequires:  python3-oslotest
-BuildRequires:  python3-os-testr
-BuildRequires:  python3-testrepository
-BuildRequires:  python3-testscenarios
-BuildRequires:  python3-testtools
-BuildRequires:  python3-eventlet >= 0.18.2
-
-Requires:   python3-eventlet >= 0.18.2
-Requires:   python3-oslo-concurrency >= 3.26.0
-Requires:   python3-oslo-log >= 3.36.0
-Requires:   python3-oslo-utils >= 3.33.0
-Requires:   python3-oslo-i18n >= 3.15.3
-Requires:   python3-six >= 1.10.0
-Requires:   python3-pbr >= 2.0.0
-Requires:   python3-babel
-Requires:   python3-paramiko
-
-%description -n python3-%{library}
-%{common_desc}
-
-
-%package -n python3-%{library}-tests
-Summary:    Tests XenAPI library for OpenStack projects
-Requires:   python3-%{library} = %{version}-%{release}
-Requires:   python3-oslotest
-Requires:   python3-os-testr
-Requires:   python3-testrepository
-Requires:   python3-testscenarios
-Requires:   python3-testtools
-
-%description -n python3-%{library}-tests
-%{common_desc}
-
-This package contains the XenAPI library test files.
-
-%endif # with_python3
-
 
 %description
 %{common_desc}
@@ -147,68 +103,44 @@ This package contains the XenAPI library test files.
 %py_req_cleanup
 
 %build
-%py2_build
-%if 0%{?with_python3}
-%py3_build
-%endif
+%{pyver_build}
 
 # generate html docs
-%{__python2} setup.py build_sphinx
-# remove the sphinx-build leftovers
+%{pyver_bin} setup.py build_sphinx
+# remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %install
-%if 0%{?with_python3}
-%py3_install
+%{pyver_install}
 # Remove the dom0 bits, we're not supporting them
-rm -rf %{buildroot}%{python3_sitelib}/%{module}/dom0
-mv %{buildroot}/%{_bindir}/xenapi_bootstrap %{buildroot}/%{_bindir}/xenapi_bootstrap-3
-ln -sf %{_bindir}/xenapi_bootstrap-3 %{buildroot}/%{_bindir}/xenapi_bootstrap-%{python3_version}
-%endif
-
-%py2_install
-# Remove the dom0 bits, we're not supporting them
-rm -rf %{buildroot}%{python2_sitelib}/%{module}/dom0
-cp %{buildroot}/%{_bindir}/xenapi_bootstrap %{buildroot}/%{_bindir}/xenapi_bootstrap-2
-ln -sf %{_bindir}/xenapi_bootstrap-2 %{buildroot}/%{_bindir}/xenapi_bootstrap-%{python2_version}
+rm -rf %{buildroot}%{pyver_sitelib}/%{module}/dom0
+# Create a versioned binary for backwards compatibility until everything is pure py3
+ln -s xenapi_bootstrap %{buildroot}%{_bindir}/xenapi_bootstrap-%{pyver}
 
 
 %check
-%if 0%{?with_python3}
-%{__python3} setup.py test
-rm -rf .testrepository
+export PYTHON=%{pyver_bin}
+
+%if %{pyver} == 3
+# Skip some tests based on https://github.com/openstack/os-xenapi/blob/master/tox.ini#L21
+ostestr --color --slowest --blacklist_file exclusion_py3.txt
+%else
+%{pyver_bin} setup.py test
 %endif
-%{__python2} setup.py test
 
-%files -n python2-%{library}
+%files -n python%{pyver}-%{library}
 %license LICENSE
-%{python2_sitelib}/%{module}
-%{python2_sitelib}/%{module}-*.egg-info
+%{pyver_sitelib}/%{module}
+%{pyver_sitelib}/%{module}-*.egg-info
 %{_bindir}/xenapi_bootstrap
-%{_bindir}/xenapi_bootstrap-2
-%{_bindir}/xenapi_bootstrap-%{python2_version}
-%exclude %{python2_sitelib}/%{module}/tests
+%{_bindir}/xenapi_bootstrap-%{pyver}
+%exclude %{pyver_sitelib}/%{module}/tests
 
-%files -n python2-%{library}-tests
-%{python2_sitelib}/%{module}/tests
+%files -n python%{pyver}-%{library}-tests
+%{pyver_sitelib}/%{module}/tests
 
 %files -n python-%{library}-doc
 %license LICENSE
 %doc doc/build/html README.rst
-
-%if 0%{?with_python3}
-
-%files -n python3-%{library}
-%license LICENSE
-%{python3_sitelib}/%{module}
-%{python3_sitelib}/%{module}-*.egg-info
-%{_bindir}/xenapi_bootstrap-3
-%{_bindir}/xenapi_bootstrap-%{python3_version}
-%exclude %{python3_sitelib}/%{module}/tests
-
-%files -n python3-%{library}-tests
-%{python3_sitelib}/%{module}/tests
-
-%endif # with_python3
 
 %changelog
