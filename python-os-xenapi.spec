@@ -13,6 +13,7 @@
 
 %global library os-xenapi
 %global module os_xenapi
+%global with_doc 1
 
 %global common_desc XenAPI library for OpenStack projects.
 
@@ -81,6 +82,7 @@ Requires:   python%{pyver}-testtools
 This package contains the XenAPI library test files.
 
 
+%if 0%{?with_doc}
 %package -n python-%{library}-doc
 Summary:    Documentation for XenAPI library for OpenStack projects
 
@@ -91,6 +93,7 @@ BuildRequires: python%{pyver}-oslo-sphinx
 %{common_desc}
 
 This package contains the documentation.
+%endif
 
 %description
 %{common_desc}
@@ -105,10 +108,12 @@ This package contains the documentation.
 %build
 %{pyver_build}
 
+%if 0%{?with_doc}
 # generate html docs
 %{pyver_bin} setup.py build_sphinx
 # remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 %install
 %{pyver_install}
@@ -139,8 +144,10 @@ ostestr --color --slowest --blacklist_file exclusion_py3.txt
 %files -n python%{pyver}-%{library}-tests
 %{pyver_sitelib}/%{module}/tests
 
+%if 0%{?with_doc}
 %files -n python-%{library}-doc
 %license LICENSE
 %doc doc/build/html README.rst
+%endif
 
 %changelog
