@@ -13,7 +13,13 @@
 
 %global library os-xenapi
 %global module os_xenapi
+# ox-xenapi does not support building docs with sphinx >= 2.0 which is required
+# for python3
+%if %{pyver} == 3
+%global with_doc 0
+%else
 %global with_doc 1
+%endif
 
 %global common_desc XenAPI library for OpenStack projects.
 
