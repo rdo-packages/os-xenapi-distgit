@@ -45,6 +45,7 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-babel
 BuildRequires:  python3-paramiko
 # Required for tests
+BuildRequires:  python3-mock
 BuildRequires:  python3-oslo-concurrency
 BuildRequires:  python3-oslo-i18n
 BuildRequires:  python3-oslo-log
