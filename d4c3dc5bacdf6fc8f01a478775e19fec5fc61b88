@@ -1,0 +1,8 @@
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Submitted-by: Alfredo Moralejo <amoralej@redhat.com>
+Submitted-at: Fri, 12 Mar 2021 09:23:53 +0000
+Reviewed-on: https://review.rdoproject.org/r/32327
+Project: openstack/os-xenapi-distgit
+Branch: refs/heads/wallaby-rdo
