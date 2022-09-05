@@ -133,7 +133,7 @@ ln -s xenapi_bootstrap %{buildroot}%{_bindir}/xenapi_bootstrap-3
 export PYTHON=python3
 
 # Skip some tests based on https://github.com/openstack/os-xenapi/blob/master/tox.ini#L21
-ostestr --color --slowest --blacklist_file exclusion_py3.txt
+stestr --test-path os_xenapi/tests run --color --slowest --exclude-list exclusion_py3.txt
 
 %files -n python3-%{library}
 %license LICENSE
