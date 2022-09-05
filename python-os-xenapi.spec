@@ -128,12 +128,11 @@ rm -rf %{buildroot}%{python3_sitelib}/%{module}/dom0
 # Create a versioned binary for backwards compatibility until everything is pure py3
 ln -s xenapi_bootstrap %{buildroot}%{_bindir}/xenapi_bootstrap-3
 
-
 %check
 export PYTHON=python3
 
 # Skip some tests based on https://github.com/openstack/os-xenapi/blob/master/tox.ini#L21
-ostestr --color --slowest --blacklist_file exclusion_py3.txt
+stestr --test-path os_xenapi/tests run --color --slowest --exclude-list exclusion_py3.txt
 
 %files -n python3-%{library}
 %license LICENSE
