@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d0869f3_4f708e09",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-07T10:32:20Z",
+      "side": 1,
+      "message": "we handle the rpmlint exceptions in https://github.com/rdo-infra/rdo-jobs/blob/master/playbooks/rpmlint/run.yaml#L191\n\nwe should add the rules for \"python3-os-xenapi.noarch: W: obsolete-not-provided python39-os-xenapi\" and \"python3-os-xenapi-tests.noarch: W: obsolete-not-provided python39-os-xenapi-tests\"",
+      "revId": "ea71247de3258ba5a4719496efd159340d55d490",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
