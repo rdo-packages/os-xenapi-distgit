@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0xc31292066be772022438222c184fd3e1edf21a78
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global library os-xenapi
@@ -11,8 +11,8 @@
 %global common_desc XenAPI library for OpenStack projects.
 
 Name:       python-%{library}
-Version:    XXX
-Release:    XXX
+Version:    0.3.4
+Release:    1%{?dist}
 Summary:    XenAPI library for OpenStack projects
 License:    ASL 2.0
 URL:        http://launchpad.net/%{library}/
@@ -152,3 +152,6 @@ stestr --test-path os_xenapi/tests run --color --slowest --exclude-list exclusio
 %endif
 
 %changelog
+* Tue Sep 13 2022 RDO <dev@lists.rdoproject.org> 0.3.4-1
+- Update to 0.3.4
+
