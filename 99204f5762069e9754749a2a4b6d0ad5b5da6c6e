@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba42da77_d734ea5a",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-07-13T10:23:31Z",
+      "side": 0,
+      "message": "we can remove this at this point",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 10
+      },
+      "revId": "99204f5762069e9754749a2a4b6d0ad5b5da6c6e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05325505_639a42a8",
+        "filename": "python-os-xenapi.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-07-13T10:23:31Z",
+      "side": 0,
+      "message": "may we move this to %tox -e docs macro?",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 7
+      },
+      "revId": "99204f5762069e9754749a2a4b6d0ad5b5da6c6e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
